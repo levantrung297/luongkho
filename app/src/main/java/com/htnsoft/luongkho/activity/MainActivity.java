@@ -79,8 +79,8 @@ public class MainActivity extends AppCompatActivity {
                             int madanhmuc = jsonObject.getInt("id");
                             String tendanhmuc = jsonObject.getString("ten");
                             String hinhanhdanhmuc = jsonObject.getString("hinhanh");
-                            /*mangdanhmuc.add(new danhmuc(madanhmuc, tendanhmuc, hinhanhdanhmuc));
-                            danhMucAdapter.notifyDataSetChanged(); */
+                            mangdanhmuc.add(new danhmuc(madanhmuc, tendanhmuc, hinhanhdanhmuc));
+                            danhMucAdapter.notifyDataSetChanged();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -199,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerview.setLayoutManager(new GridLayoutManager(getApplicationContext(),2));
         recyclerview.setAdapter(sanphamAdapter);
         mangdanhmuc = new ArrayList<danhmuc>();
-        /*danhMucAdapter = new DanhMucAdapter(getApplicationContext(), R.layout.dong_danh_muc, mangdanhmuc);
-        listViewMain.setAdapter(danhMucAdapter);*/
+        danhMucAdapter = new DanhMucAdapter(getApplicationContext(), R.layout.dong_danh_muc, mangdanhmuc);
+        listViewMain.setAdapter(danhMucAdapter);
     }
 }
