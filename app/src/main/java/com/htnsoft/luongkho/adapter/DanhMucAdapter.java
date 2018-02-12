@@ -52,8 +52,7 @@ public class DanhMucAdapter extends BaseAdapter {
         ImageView imgdanhmuc = (ImageView) convertView.findViewById(R.id.imgdanhmuc);
         danhmuc danhmuc = DanhMucList.get(position);
         txttendanhmuc.setText(danhmuc.getTen());
-        Picasso.with(context).load(danhmuc.getHinhAnh()).placeholder(R.drawable.imageplace).error(R.drawable.imageplace).into(imgdanhmuc);
-        imgdanhmuc.setImageResource(Integer.parseInt(danhmuc.getHinhAnh()));
+        Picasso.with(context).load(danhmuc.getHinhAnh()).into(imgdanhmuc);
         return convertView;
     }
 }
